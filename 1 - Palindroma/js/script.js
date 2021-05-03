@@ -4,10 +4,14 @@ Chiedere all'utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 */
 
-//user input in lower case and removes spaces
-var str = prompt('Inserire una parola da elaborare: ').toLowerCase().replace(/\s+/g, '');
+//user input in lower case
+var str = prompt('Inserire una parola da elaborare: ').toLowerCase();
+//remove spaces
+str = str.replace(/\s+/g, '');
+//remove punctuation
+str = str.replace(/[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g,"");
 
-//
+//print results
 if (isPalindrome(str)) {
     console.log('La stringa inserita e\' palindroma');
 }else {

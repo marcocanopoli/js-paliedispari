@@ -8,8 +8,9 @@ Pari e Dispari
 6 - Dichiariamo chi ha vinto.
 */
 
-var choice = ''
+var choice = '';
 var results = '';
+var userNum;
 
 //odd or even input
 do {
@@ -24,7 +25,10 @@ do {
 console.log('Hai scelto', choice);
 
 //number input
-var userNum = parseInt(prompt('Inserisci un numero da 1 a 5:'));
+do {
+    userNum = parseInt(prompt('Inserisci un numero da 1 a 5:'));
+
+} while (isNaN(userNum) || userNum < 1 || userNum > 5);
 console.log('Hai scelto il numero', userNum);
 
 //PC number
@@ -44,7 +48,7 @@ if (isEven(sum)) {
 console.log(sum, 'e\'', results);
 
 //prints winner
-if(choice == results){
+if (choice == results){
     console.log('Hai vinto!');
 }else {
     console.log('Hai perso!');
